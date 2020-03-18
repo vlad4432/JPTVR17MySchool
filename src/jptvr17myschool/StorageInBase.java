@@ -1,7 +1,6 @@
 package jptvr17myschool;
 
 import entity.Jornal;
-import entity.Person;
 import entity.Pupil;
 import entity.Subject;
 import interfaces.Saveble;
@@ -30,27 +29,6 @@ public class StorageInBase implements Saveble{
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("myschooljptvr17");
         this.em = emf.createEntityManager();
         this.tx = em.getTransaction();
-    }
-    
-    public void savePersons(List<Person> listPersons){
-        int n = listPersons.size();
-        this.tx.begin();
-            for(int i=0; i<n; i++){
-                if(listPersons.get(i).getId() == null){
-                    em.persist(listPersons.get(i));
-                }
-                else{
-                em.merge(listPersons.get(i));
-                 }
-            }
-            this.tx.commit();
-    }
-    
-    public List<Person> loadPersonFromStorage(){
-        this.tx.begin();
-            List<Person> listPersons  = em.createQuery("SELECT p FROM Person p").getResultList();
-        this.tx.commit();
-        return listPersons;
     }
     public void savePupils(List<Pupil> listpupils){
         int n =  listpupils.size();
@@ -82,7 +60,7 @@ public class StorageInBase implements Saveble{
             }
             this.tx.commit();
             }
-    public List<Jornal> loadJornalsFromStorage(){
+    public List<Jornal> loadJornalFromStorage(){
         this.tx.begin();
             List<Jornal> listJornals = em.createQuery("SELECT j FROM Jornal j").getResultList();
         this.tx.commit();
@@ -99,7 +77,7 @@ public class StorageInBase implements Saveble{
             this.tx.commit();
                                                       }
     
-    public List<Subject> loadSubjectsFromStorage(){
+    public List<Subject> loadSubjectFromStorage(){
         this.tx.begin();
             List<Subject> listSubjects = em.createQuery("SELECT s FROM Subject s").getResultList();
         this.tx.commit();
@@ -107,6 +85,8 @@ public class StorageInBase implements Saveble{
             
         
     }
+
+
 }
     
     

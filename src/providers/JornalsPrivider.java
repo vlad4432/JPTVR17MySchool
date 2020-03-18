@@ -5,17 +5,20 @@
  */
 package providers;
 import entity.Jornal;
-import entity.Person;
 import entity.Pupil;
 import entity.Subject;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-public class JornalPrivider {
+
+
+
+
+public class JornalsPrivider {
     
     private Scanner scanner = new Scanner(System.in);
     
-    public Jornal createJornal(List<Person> listPupils, List<Subject> listSubjects){
+    public Jornal createJornal(List<Pupil> listPupils, List<Subject> listSubjects){
         
         System.out.println("Список учеников:");
         for(int i=0; i<listPupils.size(); i++){
@@ -46,7 +49,4 @@ public class JornalPrivider {
         return jornal;
     }
 
-    public Jornal createJornal(List<Pupil> listPupils, List<Subject> listSubjects) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

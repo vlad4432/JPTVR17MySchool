@@ -6,14 +6,13 @@
 package jptvr17myschool;
 
 import entity.Jornal;
-import entity.Person;
 import entity.Pupil;
 import entity.Subject;
 import interfaces.Saveble;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import providers.JornalPrivider;
+import providers.JornalsPrivider;
 import providers.PupilProvider;
 import providers.SubjectProvider;
 
@@ -92,15 +91,15 @@ class App {
                     Subject subject;
                     subject = subjectProvider.createSubject();
                     listSubjects.add(subject);
-                    storageInFile.saveSubject(listSubjects);
+                    storageInFile.saveSubjects(listSubjects);
                     
                     break;
                 case 3:
                     System.out.println("Добавить оценку");
-                    JornalPrivider jornalProvider = new JornalPrivider();
-                    Jornal jornal = jornalProvider.createJornal(listPupils, listSubjects);
+                    JornalsPrivider jornalsProvider = new JornalsPrivider();
+                    Jornal jornal = jornalsProvider.createJornal(listPupils, listSubjects);
                     listJornals.add(jornal);
-                    storageInFile.saveJornal(listJornals);
+                    storageInFile.saveJornals(listJornals);
                     break;
                 case 4:
                     System.out.println("Список оценок");
@@ -108,8 +107,8 @@ class App {
                         System.out.println(listJornals.get(i));
                         System.out.printf("%d. %s %s. Предмет: %s. Оценка: %d%n",
                                 i+1,
-                                listJornals.get(i).getPerson().getName(),
-                                listJornals.get(i).getPerson().getSurename(),
+                                listJornals.get(i).getPupil().getName(),
+                                listJornals.get(i).getPupil().getSurename(),
                                 listJornals.get(i).getSubject().getName(),
                                 listJornals.get(i).getHind());
                         }

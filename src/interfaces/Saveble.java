@@ -1,7 +1,6 @@
 package interfaces;
 
 import entity.Jornal;
-import entity.Person;
 import entity.Pupil;
 import entity.Subject;
 import java.util.List;
@@ -17,9 +16,6 @@ import java.util.List;
  * @author pupil
  */
 public interface Saveble {
-    void savePersons(List<Person> listPersons);
-    List<Person> loadPersonFromStorage();
-    
     void savePupils(List<Pupil> listPupils);
     List<Pupil> loadPupilFromStorage();
     

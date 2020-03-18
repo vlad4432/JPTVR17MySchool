@@ -17,16 +17,16 @@ public class Jornal implements Serializable{
    private Subject subject;
    private Date date;
    private int hind;
-   private Person person;
+   private Pupil pupil;
 
     public Jornal() {
     }
 
-    public Jornal(Subject subject, Date date, int hind, Person person) {
+    public Jornal(Subject subject, Date date, int hind, Pupil pupil) {
         this.subject = subject;
         this.date = date;
         this.hind = hind;
-        this.person = person;
+        this.pupil = pupil;
     }
 
     public Long getId() {
@@ -61,17 +61,17 @@ public class Jornal implements Serializable{
         this.hind = hind;
     }
 
-    public Person getPerson() {
-        return person;
+    public Pupil getPupil() {
+        return pupil;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerson(Pupil pupil) {
+        this.pupil = pupil;
     }
 
     @Override
     public String toString() {
-        return "Jornal{" + "id=" + id + ", subject=" + subject + ", date=" + date + ", hind=" + hind + ", person=" + person + '}';
+        return "Jornal{" + "id=" + id + ", subject=" + subject + ", date=" + date + ", hind=" + hind + ", pupil=" + pupil + '}';
     }
 
    

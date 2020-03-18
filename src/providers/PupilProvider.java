@@ -5,7 +5,6 @@
  */
 package providers;
 
-import entity.Person;
 import entity.Pupil;
 import java.util.Scanner;
 
