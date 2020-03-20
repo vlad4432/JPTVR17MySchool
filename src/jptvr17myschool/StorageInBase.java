@@ -26,7 +26,7 @@ public class StorageInBase implements Saveble{
     
 
     public StorageInBase() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myschooljptvr17");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPTVR17MySchoolPU");
         this.em = emf.createEntityManager();
         this.tx = em.getTransaction();
     }

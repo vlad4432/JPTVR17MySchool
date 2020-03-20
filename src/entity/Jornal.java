@@ -7,16 +7,28 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author pupil
  */
+@Entity
 public class Jornal implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+    @OneToOne
    private Subject subject;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
    private Date date;
    private int hind;
+    @OneToOne
    private Pupil pupil;
 
     public Jornal() {

@@ -91,7 +91,8 @@ class App {
                     Subject subject;
                     subject = subjectProvider.createSubject();
                     listSubjects.add(subject);
-                    storageInFile.saveSubjects(listSubjects);
+                    /*storageInFile.saveSubjects(listSubjects);*/
+                    saveble.saveSubjects(listSubjects);
                     
                     break;
                 case 3:
@@ -99,7 +100,8 @@ class App {
                     JornalsPrivider jornalsProvider = new JornalsPrivider();
                     Jornal jornal = jornalsProvider.createJornal(listPupils, listSubjects);
                     listJornals.add(jornal);
-                    storageInFile.saveJornals(listJornals);
+                    /*storageInFile.saveJornals(listJornals);*/
+                    saveble.saveJornals(listJornals);
                     break;
                 case 4:
                     System.out.println("Список оценок");
